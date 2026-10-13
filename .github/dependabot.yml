@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/PDF-Suite/Linux"
+    schedule:
+      interval: weekly
+  - package-ecosystem: pip
+    directory: "/PDF-Suite/Windows"
+    schedule:
+      interval: weekly
+  - package-ecosystem: pip
+    directory: "/PDF-Suite/macOS"
+    schedule:
+      interval: weekly
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly

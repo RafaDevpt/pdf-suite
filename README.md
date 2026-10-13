@@ -10,11 +10,11 @@
 **Modernise legacy forms · Make PDFs fillable · Compare and summarise documents**
 
 ![Status](https://img.shields.io/badge/status-in%20development-E3B341?style=for-the-badge)
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Offline](https://img.shields.io/badge/offline-100%25-6E5494?style=for-the-badge)
 ![Formats](https://img.shields.io/badge/PDF_·_DOCX_·_XLSM_·_TXT-EC1C24?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)
 
-<a href="../../tree/main"><img src="https://img.shields.io/badge/←_back_to_index-30363D?style=flat-square" /></a>
+<a href="https://github.com/RafaDevpt/Personal-AI-Projects"><img src="https://img.shields.io/badge/←_back_to_index-30363D?style=flat-square" /></a>
 
 </div>
 
