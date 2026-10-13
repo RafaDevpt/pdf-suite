@@ -16,7 +16,7 @@ pdfplumber>=0.11,<0.12
 
 # PT-PT: Escrita do AcroForm e preenchimento de formulários.
 # EN-UK: AcroForm writing and form filling.
-pypdf>=5.0,<6.0
+pypdf>=5.0,<7.0
 
 # PT-PT: Leitura de documentos Word, incluindo as tabelas — que é onde os
 #        preços de uma proposta comercial quase sempre estão.
