@@ -45,7 +45,7 @@ Pillow>=10.0
 # PT-PT: Gerar os ficheiros de exemplo (tools/gerar_exemplos.py). Não é
 #        necessária para usar a aplicação.
 # EN-UK: Generating the sample files. Not needed to use the application.
-reportlab>=4.0,<5.0
+reportlab>=4.0,<6.0
 
 # ===========================================================================
 # PT-PT: OPCIONAL — análise assistida por modelo.
