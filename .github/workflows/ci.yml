@@ -25,9 +25,9 @@ name: CI
 
 on:
   push:
-    branches: [PDF-Suite]
+    branches: [main]
   pull_request:
-    branches: [PDF-Suite]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
