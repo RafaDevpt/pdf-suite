@@ -34,7 +34,7 @@ openpyxl>=3.1,<4.0
 # EN-UK: Graphical interface. Sits on the standard library's Tkinter, so it
 #        brings no graphics engine of its own. MIT-licensed.
 #        Not required on the command line.
-customtkinter>=5.2.2,<6.0
+customtkinter>=5.2.2,<7.0
 
 # PT-PT: Mostrar a página no editor visual de campos. Sem o Pillow, o editor
 #        abre em modo de lista e a aplicação funciona à mesma.
