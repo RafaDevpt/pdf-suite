@@ -25,7 +25,7 @@ Created by Redfox using Claude
 
 __version__ = "2.0.0"
 __app_name__ = "PDF Suite"
-__author__ = "Rafael Santos (Redfox)"
+__author__ = "Redfox"
 __license__ = "MIT"
 __credit__ = "Created by Redfox using Claude"
 
