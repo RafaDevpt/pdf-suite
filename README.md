@@ -158,6 +158,12 @@ The tool flags what it could not translate rather than silently dropping it.
 
 ---
 
+## Configuration
+
+Secrets are read from environment variables, never from files in the repository: `ANTHROPIC_API_KEY`. [`.env.example`](.env.example) is the template: copy it to `.env`, fill it in and load it into your shell (`set -a; . ./.env; set +a`) or hand it to Docker (`--env-file .env`). `.env` is ignored by git.
+
+Os segredos são lidos de variáveis de ambiente, nunca de ficheiros do repositório. O [`.env.example`](.env.example) é o modelo: copie para `.env`, preencha e carregue-o na shell ou passe-o ao Docker. O `.env` é ignorado pelo git.
+
 ## License
 
 GPL-3.0 — see [`LICENSE`](LICENSE) in the repository root.
