@@ -74,7 +74,7 @@ def formulario(destino: Path) -> None:
     c.setFont("Helvetica", 10)
 
     for indice, sistema in enumerate(
-        ["Opera PMS", "Simphony POS", "Microsoft 365", "VPN", "Impressoras", "Partilhas de rede"]
+        ["PMS", "POS", "Microsoft 365", "VPN", "Impressoras", "Partilhas de rede"]
     ):
         coluna = indice % 2
         if coluna == 0 and indice:

@@ -231,10 +231,10 @@ class TestCriarFormulario:
         criar_formulario(formulario_pdf, vazio, campos)
 
         cheio = tmp_path / "cheio.pdf"
-        preencher(vazio, cheio, {"nome_completo": "Rafael Santos"})
+        preencher(vazio, cheio, {"nome_completo": "Maria Exemplo"})
 
         valores = {n: v for n, _, v in listar_campos(cheio)}
-        assert valores["nome_completo"] == "Rafael Santos"
+        assert valores["nome_completo"] == "Maria Exemplo"
 
     def test_caixa_de_seleccao_tem_os_dois_estados(self, formulario_pdf: Path, tmp_path: Path):
         """
