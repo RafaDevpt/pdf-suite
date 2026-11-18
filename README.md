@@ -5,18 +5,30 @@
 
 <div align="center">
 
-# 📚 PDF Suite
+<img src="Assets/banner.svg" width="100%" alt="PDF Suite" />
 
-**Modernise legacy forms · Make PDFs fillable · Compare and summarise documents**
+<br />
 
-![Status](https://img.shields.io/badge/status-in%20development-E3B341?style=for-the-badge)
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Offline](https://img.shields.io/badge/offline-100%25-6E5494?style=for-the-badge)
-![Formats](https://img.shields.io/badge/PDF_·_DOCX_·_XLSM_·_TXT-EC1C24?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)
+[![CI](https://img.shields.io/github/actions/workflow/status/RafaDevpt/pdf-suite/ci.yml?branch=main&style=flat-square&label=CI&labelColor=0b1220)](https://github.com/RafaDevpt/pdf-suite/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/RafaDevpt/pdf-suite?style=flat-square&label=release&color=f59e0b&labelColor=0b1220)](https://github.com/RafaDevpt/pdf-suite/releases/latest)
+![status](https://img.shields.io/badge/status-in_development-f59e0b?style=flat-square&labelColor=0b1220)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&labelColor=0b1220&logo=python&logoColor=white)
+![offline](https://img.shields.io/badge/offline-100%-6E5494?style=flat-square&labelColor=0b1220)
+![formats](https://img.shields.io/badge/formats-PDF_·_DOCX_·_XLSM_·_TXT-EC1C24?style=flat-square&labelColor=0b1220)
+![licence](https://img.shields.io/badge/licence-GPL--3.0-f59e0b?style=flat-square&labelColor=0b1220)
 
-<a href="https://github.com/RafaDevpt/Personal-AI-Projects"><img src="https://img.shields.io/badge/←_back_to_index-30363D?style=flat-square" /></a>
+<br /><br />
+
+<a href="https://github.com/RafaDevpt/Personal-AI-Projects"><img src="https://img.shields.io/badge/←_back_to_the_index-30363d?style=for-the-badge" /></a>
+<a href="https://github.com/RafaDevpt/pdf-suite/releases/latest"><img src="https://img.shields.io/badge/download_the_latest_release_→-f59e0b?style=for-the-badge&labelColor=0b1220" /></a>
+
+<sub>Part of <a href="https://github.com/RafaDevpt/Personal-AI-Projects"><b>Personal AI Projects</b></a> by Redfox</sub>
 
 </div>
+
+# 📚 PDF Suite
+
+> **Modernise legacy forms · Make PDFs fillable · Compare and summarise documents**
 
 > ⚠️ **Work in progress.** The conversion and comparison engines are in place; the interface, reporting and packaging are not finished. Expect breaking changes.
 
@@ -28,7 +40,7 @@ Two problems, one document pipeline.
 
 The first is **legacy forms**: Excel files built a decade ago, held together by VBA macros nobody wants to touch. They break on new Office versions, trigger macro security warnings, can't be filled on a phone, and the person who wrote the code left years ago.
 
-The second is **document comparison**: six supplier proposals land in your inbox and someone needs an answer by Friday. Opening them side by side and building a table in Excel is mechanical work — the decision is not. This automates the first part and leaves the second where it belongs.
+The second is **document comparison**: six supplier proposals land in the inbox and someone needs an answer by Friday. Opening them side by side and building a table in Excel is mechanical work — the decision is not. This automates the first part and leaves the second where it belongs.
 
 Both are the same underlying job: read documents, understand their structure, produce something useful. So they share one tool.
 
@@ -158,7 +170,7 @@ The tool flags what it could not translate rather than silently dropping it.
 
 ---
 
-## License
+## Licence
 
 GPL-3.0 — see [`LICENSE`](LICENSE) in the repository root.
 
@@ -169,9 +181,9 @@ GPL-3.0 — see [`LICENSE`](LICENSE) in the repository root.
 
 ## 🐳 Docker & Terraform
 
-The graphical interface stays a desktop app: a container has no screen. Docker runs the command line, which is the part worth automating. / A interface gráfica continua a ser uma aplicação de secretária: num contentor não há ecrã. O Docker corre a linha de comandos, que é a parte que vale a pena automatizar.
+The graphical interface stays a desktop app: a container has no screen. Docker runs the command line, which is the part worth automating.
 
-Files / Ficheiros: [`PDF-Suite/Linux/Dockerfile`](PDF-Suite/Linux/Dockerfile) · [`PDF-Suite/Linux/terraform/`](PDF-Suite/Linux/terraform/)
+Files: [`PDF-Suite/Linux/Dockerfile`](PDF-Suite/Linux/Dockerfile) · [`PDF-Suite/Linux/terraform/`](PDF-Suite/Linux/terraform/)
 
 ### Docker
 
@@ -181,34 +193,33 @@ docker build -t local/pdf-suite .
 docker run --rm local/pdf-suite --help
 ```
 
-Everything the app reads or writes lives in `/dados`; mount a folder there and run as your own user (`--user`) so the files it writes are yours. / Tudo o que a aplicação lê ou escreve vive em `/dados`; monte lá uma pasta e corra com o seu utilizador (`--user`) para os ficheiros escritos serem seus.
+Everything the app reads or writes lives in `/dados`; a host folder is mounted there and the container runs as the invoking user (`--user`), so the files it writes belong to that user.
 
-Compare two quotes and export to Excel / Comparar duas propostas e exportar para Excel:
+Compare two quotes and export to Excel:
 
 ```bash
 docker run --rm --user "$(id -u):$(id -g)" -v "$PWD:/dados" local/pdf-suite comparar proposta-a.pdf proposta-b.pdf --excel
 ```
 
-Make a PDF fillable / Tornar um PDF preenchível:
+Make a PDF fillable:
 
 ```bash
 docker run --rm --user "$(id -u):$(id -g)" -v "$PWD:/dados" local/pdf-suite formulario formulario.pdf
 ```
 
-Environment variables / Variáveis de ambiente: `ANTHROPIC_API_KEY` (optional, only for the model-assisted summary / opcional, só para o resumo assistido).
-
+Environment variables: `ANTHROPIC_API_KEY` (optional, only for the model-assisted summary).
 ### Terraform
 
-Builds the image and creates a container with the same hardening (read-only filesystem, no capabilities, unprivileged user). / Constrói a imagem e cria um contentor com o mesmo endurecimento (sistema de ficheiros só de leitura, sem capacidades, utilizador sem privilégios).
+Builds the image and creates a container with the same hardening (read-only filesystem, no capabilities, unprivileged user).
 
 ```bash
 cd PDF-Suite/Linux/terraform
 mkdir -p dados
 terraform init
 terraform apply -var "pasta_dados=./dados" -var "utilizador=$(id -u):$(id -g)"
-docker logs pdf-suite            # output / resultado
-docker start -a pdf-suite        # run again with the same settings / correr de novo
+docker logs pdf-suite            # output
+docker start -a pdf-suite        # run again with the same settings
 terraform destroy
 ```
 
-Change what it runs with `-var 'comando=[...]'` (default: `["comparar", "proposta-a.pdf", "proposta-b.pdf", "--excel"]`). Secrets go in `TF_VAR_ambiente`, never in the `.tf` files. / Mude o que corre com `-var 'comando=[...]'`. Os segredos vão em `TF_VAR_ambiente`, nunca nos ficheiros `.tf`.
+Change what it runs with `-var 'comando=[...]'` (default: `["comparar", "proposta-a.pdf", "proposta-b.pdf", "--excel"]`). Secrets go in `TF_VAR_ambiente`, never in the `.tf` files.
